@@ -16,7 +16,9 @@
   "dependencies": {
     "@quasar/extras": "^1.0.0",
     "quasar": "^1.0.0",
-    "vue-i18n": "^8.0.0"
+    "rxjs": "^6.5.2",
+    "vue-i18n": "^8.0.0",
+    "vue-rx": "^6.2.0"
   },
   "devDependencies": {
     "@quasar/app": "^1.0.0",

@@ -1,6 +1,6 @@
 <template>
-  <q-page class="flex flex-center">
-    <img alt="Quasar logo" src="~assets/quasar-logo-full.svg">
+  <q-page class="flex">
+    <foggy-casper-gallery :items="gallery" :item-size="imageSize"></foggy-casper-gallery>
   </q-page>
 </template>
 
@@ -8,7 +8,44 @@
 </style>
 
 <script>
+/*
+<img alt="Quasar logo" src="~assets/quasar-logo-full.svg">
+ */
+
+import FoggyCasperGallery from '../components/FoggyCasperGallery'
 export default {
-  name: 'PageIndex'
+  name: 'PageIndex',
+  components: { FoggyCasperGallery },
+  data () {
+    return {
+      imageSize: {
+        width: 640,
+        height: 360
+      }
+    }
+  },
+  computed: {
+    gallery () {
+      return this.fillItems(1)
+    }
+  },
+  mounted () {},
+  methods: {
+    fillItems (n) {
+      return Array(n)
+        .fill(0)
+        .map((e, i) => this.itemGenerator(e, i), this)
+    },
+    itemGenerator (e, i) {
+      return {
+        id: i,
+        label: `${i}`,
+        image: this.imageGenerator(i)
+      }
+    },
+    imageGenerator (i) {
+      return `http://lorempixel.com/${this.imageSize.width}/${this.imageSize.height}/`
+    }
+  }
 }
 </script>

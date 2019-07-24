@@ -19,14 +19,14 @@ export default {
   data () {
     return {
       imageSize: {
-        width: 640,
-        height: 360
+        width: 360,
+        height: 640
       }
     }
   },
   computed: {
     gallery () {
-      return this.fillItems(1)
+      return this.fillItems(5)
     }
   },
   mounted () {},
